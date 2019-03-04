@@ -23,7 +23,8 @@ public class Add {
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        int sum = arrayList.stream().map(x -> x * 3 + 2).reduce(0, (x, y) -> x + y);
+        return sum;
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
