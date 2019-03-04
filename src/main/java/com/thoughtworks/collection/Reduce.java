@@ -56,6 +56,7 @@ public class Reduce {
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        int lastOdd = this.getLastOdd();
+        return this.arrayList.indexOf(lastOdd);
     }
 }
