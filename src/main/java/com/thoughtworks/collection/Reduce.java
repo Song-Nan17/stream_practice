@@ -42,7 +42,9 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        boolean isEqual = arrayList.size() != this.arrayList.size() ? false
+                : this.arrayList.stream().allMatch(x -> x == arrayList.get(this.arrayList.indexOf(x)));
+        return isEqual;
     }
 
     //实现接口SingleLink，然后再此函数内使用
