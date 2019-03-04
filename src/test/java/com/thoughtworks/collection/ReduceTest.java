@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import com.thoughtworks.collection.single_link.SingleLink;
 import org.junit.Test;
 
 import java.util.Arrays;

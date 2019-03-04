@@ -1,4 +1,4 @@
-package com.thoughtworks.collection;
+package com.thoughtworks.collection.single_link;
 
 public interface SingleLink<T> {
     public T getHeaderData();

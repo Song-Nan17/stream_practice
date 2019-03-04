@@ -1,5 +1,7 @@
 package com.thoughtworks.collection;
 
+import com.thoughtworks.collection.single_link.SingleLink;
+import com.thoughtworks.collection.single_link.SingleLinkedList;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
@@ -49,7 +51,15 @@ public class Reduce {
 
     //实现接口SingleLink，然后再此函数内使用
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        SingleLinkedList<Integer> singleLinkedList = new SingleLinkedList<>();
+        for (Integer number : arrayList) {
+            singleLink.addTailPointer(number);
+            singleLinkedList.addTailPointer(number);
+        }
+        int size = singleLinkedList.size();
+        double median = size % 2 != 0 ? singleLinkedList.getNode(size / 2)
+                : (singleLinkedList.getNode(size / 2) + singleLinkedList.getNode(size / 2 - 1)) * 0.5;
+        return median;
     }
 
     public int getLastOdd() {
