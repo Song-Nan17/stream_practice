@@ -37,7 +37,8 @@ public class Reduce {
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        int firstEven = this.getFirstEven();
+        return this.arrayList.indexOf(firstEven);
     }
 
     public boolean isEqual(List<Integer> arrayList) {
