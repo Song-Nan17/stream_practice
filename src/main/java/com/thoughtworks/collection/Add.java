@@ -63,6 +63,8 @@ public class Add {
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return Stream.iterate(0, i -> i + 1).limit(arrayList.size() - 1)
+                .map(i -> (arrayList.get(i) + arrayList.get(i + 1)) * 3)
+                .collect(Collectors.toList());
     }
 }
