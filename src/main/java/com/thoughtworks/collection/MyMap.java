@@ -26,7 +26,11 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        int length = letterList.size();
+        return this.array.stream()
+                .map(x -> x > length ? letterList.get((x - 1) / length - 1) + letterList.get((x - 1) % length) : letterList.get(x - 1))
+                .collect(Collectors.toList());
+
     }
 
     public List<Integer> sortFromBig() {
