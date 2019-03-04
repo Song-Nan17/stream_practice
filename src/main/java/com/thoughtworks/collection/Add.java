@@ -38,7 +38,12 @@ public class Add {
     }
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> listOfEvenIndex = Stream.iterate(0, i -> i + 1).limit(arrayList.size())
+                .filter(i -> i % 2 == 0).map(i -> arrayList.get(i))
+                .collect(Collectors.toList());
+        int size = listOfEvenIndex.size();
+        double median = size % 2 != 0 ? listOfEvenIndex.get(size / 2) : (listOfEvenIndex.get(size / 2 - 1) + listOfEvenIndex.get(size / 2)) / 2.0;
+        return median;
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
