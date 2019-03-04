@@ -22,7 +22,7 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+        return this.array.stream().map(x -> this.letterList.get(x - 1)).collect(Collectors.toList());
     }
 
     public List<String> mapLetters() {
